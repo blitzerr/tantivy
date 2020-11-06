@@ -103,6 +103,7 @@ impl TermQuery {
             self.term.clone(),
             index_record_option,
             bm25_weight,
+            scoring_enabled,
         ))
     }
 }

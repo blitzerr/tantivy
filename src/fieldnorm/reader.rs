@@ -66,6 +66,12 @@ pub struct FieldNormReader {
 }
 
 impl FieldNormReader {
+    pub fn empty() -> FieldNormReader {
+        FieldNormReader {
+            data: OwnedBytes::empty(),
+        }
+    }
+
     /// Opens a field norm reader given its file.
     pub fn open(fieldnorm_file: FileSlice) -> crate::Result<Self> {
         let data = fieldnorm_file.read_bytes()?;
